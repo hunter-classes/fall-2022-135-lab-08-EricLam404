@@ -16,6 +16,9 @@ frame: frame.o imageio.o
 scale: scale.o imageio.o
 	g++ -o scale scale.o imageio.o
 
+pixelate: pixelate.o imageio.o
+	g++ -o pixelate pixelate.o imageio.o
+
 sample.o: sample.cpp imageio.h
 
 invert.o : invert.cpp imageio.h
@@ -28,8 +31,10 @@ frame.o: frame.cpp imageio.h
 
 scale.o: scale.cpp imageio.h
 
+pixelate.o: pixelate.cpp imageio.h
+
 imageio.o: imageio.cpp imageio.h
 
 
 clean:
-	rm -f *.o sample invert invert-half box frame scale
+	rm -f *.o sample invert invert-half box frame scale pixelate
